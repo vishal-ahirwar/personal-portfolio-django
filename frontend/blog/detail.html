@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,13 +8,9 @@
   </head>
   <body>
     <center>
-        <h1>Vishal has written {{blogs.count}} blog{{blogs.count|pluralize}}</h1>
-        {%for blog in blogs %}
-            <a href="{%url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2></a>
-            <p>{{blog.created_at|date:'M d Y'}}</p>
-            <img src="{{blog.image.url}}" alt="image" width="25%">
-            <p>{{blog.description|striptags|truncatechars:75}}</h3>
-        {% endfor %}
+        <h1>{{detail.title}}</h1>
+        <p>{{detail.created_at}}</p>
+        <h3>{{detail.description|safe}}</h3>
     </center>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
