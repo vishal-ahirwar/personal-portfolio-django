@@ -126,3 +126,10 @@ MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from .local_setting import *
+    print("[message]serving on local machine!")
+except ImportError:
+
+    print("[message]Looks Like You are on Production:)")
