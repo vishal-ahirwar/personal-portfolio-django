@@ -25,4 +25,5 @@ urlpatterns = [
     path('',include('portfolio.urls')),
     path('blog/',include('blog.urls')),
 ]
-urlpatterns+=static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)
+if settings.DEBUG==False:
+    urlpatterns+=static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)
